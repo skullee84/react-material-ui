@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
-import {
-  Grid,
-  Paper,
-  withStyles
-} from '@material-ui/core';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import _ from "lodash";
+import { Grid, Paper, withStyles } from "@material-ui/core";
+
+import * as commonAction from "actions/commonAction";
 
 class Home extends Component {
+  componentDidMount() {
+    this.props.commonAction.fetchCommon();
+  }
+
   render() {
     const { classes } = this.props;
     return (
       <Grid className={classes.root}>
         <Paper className={classes.paper} elevation={0}>
           <Grid container>
-            <Grid item>
-              A
-            </Grid>
-            <Grid item>
-              B
-            </Grid>
-            <Grid item>
-              C
-            </Grid>
+            <Grid item>A</Grid>
+            <Grid item>B</Grid>
+            <Grid item>C</Grid>
           </Grid>
         </Paper>
       </Grid>
@@ -29,12 +28,25 @@ class Home extends Component {
 }
 
 const styles = theme => ({
-  root: {
-  },
+  root: {},
   paper: {
-    // width: '100%',
     height: 300
   }
 });
 
-export default withStyles(styles)(Home);
+const mapStateToProps = state => {
+  return {
+    commonStore: state.commonStore
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    commonAction: bindActionCreators(_.assign({}, commonAction), dispatch)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles)(Home));
