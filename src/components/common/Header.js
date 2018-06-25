@@ -42,6 +42,14 @@ class Header extends Component {
                     News
                   </Button>
                 </Grid>
+                <Grid item>
+                  <Button size='small'
+                    variant={location.pathname === '/group' ? 'outlined' : 'flat'}
+                    component={Link}
+                    to='/group'>
+                    Group
+                  </Button>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>

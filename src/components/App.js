@@ -8,6 +8,7 @@ import {
 import Header from 'components/common/Header';
 import Home from 'components/home/Home';
 import News from 'components/news/News';
+import Group from 'components/group/Group';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/news" component={News}/>
+          <Route exact path="/group" component={Group}/>
         </Switch>
       </Grid>
     );
