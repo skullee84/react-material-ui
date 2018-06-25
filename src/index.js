@@ -11,7 +11,7 @@ import { rootReducer } from './reducers/rootReducer';
 import { theme } from './libs/theme';
 import registerServiceWorker from './libs/registerServiceWorker';
 
-import App from './components/App';
+import App from 'components/App';
 
 const configureStore = (history, initialState = {}) => {
   const enhancer = compose(

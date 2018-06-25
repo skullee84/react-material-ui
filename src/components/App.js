@@ -5,9 +5,9 @@ import {
   withStyles
 } from '@material-ui/core';
 
-import Header from './common/Header';
-import Home from './home/Home';
-import News from './news/News';
+import Header from 'components/common/Header';
+import Home from 'components/home/Home';
+import News from 'components/news/News';
 
 class App extends Component {
   render() {

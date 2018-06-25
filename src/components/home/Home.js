@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import _ from "lodash";
-import { Grid, Paper, withStyles } from "@material-ui/core";
+import { Grid, Paper, Button, withStyles } from "@material-ui/core";
 
 import * as commonAction from "actions/commonAction";
 
@@ -13,13 +13,14 @@ class Home extends Component {
 
   render() {
     const { classes } = this.props;
+
     return (
       <Grid className={classes.root}>
         <Paper className={classes.paper} elevation={0}>
           <Grid container>
-            <Grid item>A</Grid>
-            <Grid item>B</Grid>
-            <Grid item>C</Grid>
+            <Grid item>
+              <Button onClick={this.handle}>Add</Button>
+            </Grid>
           </Grid>
         </Paper>
       </Grid>
